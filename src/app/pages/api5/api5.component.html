@@ -1,0 +1,7 @@
+<h1>API 5: Elimina Richiesta di Finanziamento</h1>
+<form (ngSubmit)="deleteRichiesta()">
+  <mat-form-field>
+    <input matInput placeholder="Richiesta ID" [(ngModel)]="richiestaID" name="richiestaID" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Elimina Richiesta</button>
+</form>

@@ -1,0 +1,19 @@
+<h1>API 3: Crea Nuova Richiesta di Finanziamento</h1>
+<form (ngSubmit)="createRichiesta()">
+  <mat-form-field>
+    <input matInput placeholder="Richiesta ID" [(ngModel)]="richiesta.richiestaID" name="richiestaID" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Cognome Nome Richiedente" [(ngModel)]="richiesta.cognomeNomeRichiedente" name="cognomeNomeRichiedente" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Data Inserimento Richiesta" [(ngModel)]="richiesta.dataInserimentoRichiesta" name="dataInserimentoRichiesta" type="date" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Importo" [(ngModel)]="richiesta.importo" name="importo" type="number" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Numero Rate" [(ngModel)]="richiesta.numeroRate" name="numeroRate" type="number" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Crea Richiesta</button>
+</form>

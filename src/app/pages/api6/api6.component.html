@@ -1,0 +1,48 @@
+<h1>API 6: Richieste di Finanziamento tra Due Date</h1>
+<form (ngSubmit)="getRichiesteByDateRange()">
+  <mat-form-field>
+    <input matInput placeholder="Data Minima" [(ngModel)]="dataMin" name="dataMin" type="date" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Data Massima" [(ngModel)]="dataMax" name="dataMax" type="date" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Limite" [(ngModel)]="limit" name="limit" type="number" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Cerca</button>
+</form>
+
+<div *ngIf="richieste.length > 0">
+  <table mat-table [dataSource]="richieste" class="mat-elevation-z8">
+    <ng-container matColumnDef="richiestaID">
+      <th mat-header-cell *matHeaderCellDef> Richiesta ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.richiestaID}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cognomeNomeRichiedente">
+      <th mat-header-cell *matHeaderCellDef> Richiedente </th>
+      <td mat-cell *matCellDef="let element"> {{element.cognomeNomeRichiedente}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dataInserimentoRichiesta">
+      <th mat-header-cell *matHeaderCellDef> Data Inserimento </th>
+      <td mat-cell *matCellDef="let element"> {{element.dataInserimentoRichiesta | date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="importo">
+      <th mat-header-cell *matHeaderCellDef> Importo </th>
+      <td mat-cell *matCellDef="let element"> {{element.importo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="numeroRate">
+      <th mat-header-cell *matHeaderCellDef> Numero Rate </th>
+      <td mat-cell *matCellDef="let element"> {{element.numeroRate}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['richiestaID', 'cognomeNomeRichiedente', 'dataInserimentoRichiesta', 'importo', 'numeroRate']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['richiestaID', 'cognomeNomeRichiedente', 'dataInserimentoRichiesta', 'importo', 'numeroRate'];"></tr>
+  </table>
+</div>
+<div *ngIf="richieste.length === 0">
+  <p>Nessuna richiesta trovata.</p>
+</div>

@@ -1,0 +1,19 @@
+<h1>API 4: Aggiorna Richiesta di Finanziamento</h1>
+<form (ngSubmit)="updateRichiesta()">
+  <mat-form-field>
+    <input matInput placeholder="Richiesta ID" [(ngModel)]="richiesta.richiestaID" name="richiestaID" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Cognome Nome Richiedente" [(ngModel)]="richiesta.cognomeNomeRichiedente" name="cognomeNomeRichiedente">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Data Inserimento Richiesta" [(ngModel)]="richiesta.dataInserimentoRichiesta" name="dataInserimentoRichiesta" type="date">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Importo" [(ngModel)]="richiesta.importo" name="importo" type="number">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Numero Rate" [(ngModel)]="richiesta.numeroRate" name="numeroRate" type="number">
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Aggiorna Richiesta</button>
+</form>

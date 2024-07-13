@@ -1,0 +1,14 @@
+<h1>API 7: Somma degli Importi delle Richieste tra Due Date</h1>
+<form (ngSubmit)="getSumImportoByDateRange()">
+  <mat-form-field>
+    <input matInput placeholder="Data Minima" [(ngModel)]="dataMin" name="dataMin" type="date" required>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Data Massima" [(ngModel)]="dataMax" name="dataMax" type="date" required>
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Calcola</button>
+</form>
+
+<div *ngIf="totalImporto !== null" class="result">
+  <h2>Totale Importo: {{ totalImporto | currency }}</h2>
+</div>
