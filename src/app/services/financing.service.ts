@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FinancingService {
-  private apiUrl = 'https://vdpb-ackend-ak55tnsy5-davides-projects-56acf969.vercel.app/api';
+  private apiUrl = 'https://vdpb-ackend-8h67venb3-davides-projects-56acf969.vercel.app/api';
 
   constructor(private http: HttpClient) { }
 
